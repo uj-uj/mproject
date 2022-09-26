@@ -9,6 +9,7 @@ from .models import Geek
 from django.http import HttpResponseRedirect
 
 def index(request):
+    print("subbranch anna")
     g=Geek.objects.all()[1]
     if request.method == 'POST':
         form = GeeksForm(request.POST,instance=g)
@@ -19,4 +20,5 @@ def index(request):
     form=GeeksForm(instance=g)
     context={'context':form}
     print("sub branch chnage")
+    print("adding another line")
     return render(request,'formcheck/home.html',context)
