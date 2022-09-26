@@ -9,6 +9,7 @@ from .models import Geek
 from django.http import HttpResponseRedirect
 
 def index(request):
+    print("anna changes the change")
     g=Geek.objects.all()[1]
     if request.method == 'POST':
         form = GeeksForm(request.POST,instance=g)
